@@ -11,7 +11,7 @@ import android.widget.ListView;
 /**
  * Created by Admin on 26-Mar-16.
  */
-public class Fragmentowncomplaints extends android.support.v4.app.Fragment{
+public class Fragment_my_resolved extends android.support.v4.app.Fragment{
 
 
     String head[] = {"Lanban", "Dogs ki  bakwas", "Library Timings"};
@@ -19,13 +19,15 @@ public class Fragmentowncomplaints extends android.support.v4.app.Fragment{
     String time[]= {"4 days ago", "5 days ago ", "100 days ago"    };
 
     String upvote[]= {"200 Upvotes","5500 Upvotes","900 Upvotes"};
-    
+
+    String type[]={"Hostel","Institute","Individual"};
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.v("ListFragment", "onActivityCreated().");
         Log.v("ListsavedInstanceState", savedInstanceState == null ? "true" : "false");
 
-        Own_Array_Adapter dataAdapter = new Own_Array_Adapter(getContext(), head ,time ,upvote );
+        My_resolved_ArrayAdapter dataAdapter = new My_resolved_ArrayAdapter(getContext(), head ,time ,upvote,type );
         ListView listView = (ListView) getView().findViewById(R.id.complaints);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);

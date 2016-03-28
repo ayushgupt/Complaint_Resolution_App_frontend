@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class NotifArrayAdapter extends ArrayAdapter<String> {
@@ -27,10 +28,10 @@ public class NotifArrayAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(com.example.quantumcoder.iitd_complaints.R.layout.notification_list, parent, false);
-        TextView textView = (TextView) rowView.findViewById(com.example.quantumcoder.iitd_complaints.R.id.notif_description);
-        TextView textView2 = (TextView) rowView.findViewById(com.example.quantumcoder.iitd_complaints.R.id.notif_time);
-        TextView number_View = (TextView) rowView.findViewById(com.example.quantumcoder.iitd_complaints.R.id.notif_sno);
+        View rowView = inflater.inflate(R.layout.notification_list, parent, false);
+        TextView textView = (TextView) rowView.findViewById(R.id.notif_description);
+        TextView textView2 = (TextView) rowView.findViewById(R.id.notif_time);
+        TextView number_View = (TextView) rowView.findViewById(R.id.notif_sno);
         textView.setText(Html.fromHtml(values[position]));
         textView2.setText(deadlines[position]);
         // change the icon for Windows and iPhone

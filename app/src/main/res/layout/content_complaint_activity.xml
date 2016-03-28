@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.quantumcoder.iitd_complaints.Complaint_activity"
+    tools:context="com.example.quantumcoder.moodleplus.Complaint_activity"
     tools:showIn="@layout/complaint_detail">
 
 </RelativeLayout>

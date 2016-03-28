@@ -48,4 +48,5 @@
     <string name="title_activity_complaint_activity">Complaint_activity</string>
     <string name="title_activity_dummy">dummy</string>
     <string name="title_activity_detail_comp_activity">detail_comp_activity</string>
+    <string name="title_activity_detailed_complaint">DetailedComplaintActivity</string>
 </resources>

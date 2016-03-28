@@ -3,17 +3,29 @@ package com.example.quantumcoder.iitd_complaints;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static android.widget.Toast.LENGTH_SHORT;
+import static com.android.volley.VolleyLog.TAG;
 
 public class FragmentHome extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(com.example.quantumcoder.iitd_complaints.R.layout.home_layout,null);
+        return inflater.inflate(R.layout.home_layout,null);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {

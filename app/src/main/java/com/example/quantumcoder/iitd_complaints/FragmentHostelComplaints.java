@@ -1,5 +1,7 @@
 package com.example.quantumcoder.iitd_complaints;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -7,9 +9,26 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static android.widget.Toast.LENGTH_LONG;
+import static com.android.volley.VolleyLog.TAG;
 
 public class FragmentHostelComplaints extends Fragment {
 
@@ -23,9 +42,9 @@ public class FragmentHostelComplaints extends Fragment {
         /**
          *Inflate tab_layout and setup Views.
          */
-        View x =  inflater.inflate(com.example.quantumcoder.iitd_complaints.R.layout.tab_layout, null);
-        tabLayout = (TabLayout) x.findViewById(com.example.quantumcoder.iitd_complaints.R.id.tabs);
-        viewPager = (ViewPager) x.findViewById(com.example.quantumcoder.iitd_complaints.R.id.viewpager);
+        View x =  inflater.inflate(R.layout.tab_hostel_layout, null);
+        tabLayout = (TabLayout) x.findViewById(R.id.tabs);
+        viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
         /**
          *Set an Apater for the View Pager
@@ -76,8 +95,8 @@ public class FragmentHostelComplaints extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new FragmentComplaints();
-                case 1 : return new FragmentComplaints();
+                case 0 : return new Fragment_hostel_unresolved();
+                case 1 : return new Fragment_hostel_resolved();
             }
             return null;
         }
@@ -98,9 +117,9 @@ public class FragmentHostelComplaints extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Unresolved";
+                    return "Hostel Unresolved";
                 case 1 :
-                    return "Resolved";
+                    return "Hostel Resolved";
 
             }
             return null;

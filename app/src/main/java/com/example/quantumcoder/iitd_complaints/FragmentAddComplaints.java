@@ -25,7 +25,7 @@ public class FragmentAddComplaints extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(com.example.quantumcoder.iitd_complaints.R.layout.fragment_add_complaint,null);
+        return inflater.inflate(R.layout.fragment_add_complaint,null);
 
 
 
@@ -34,10 +34,10 @@ public class FragmentAddComplaints extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Spinner spinner = (Spinner) getView().findViewById(com.example.quantumcoder.iitd_complaints.R.id.complaint_level);
+        Spinner spinner = (Spinner) getView().findViewById(R.id.complaint_level);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-                com.example.quantumcoder.iitd_complaints.R.array.c_level, android.R.layout.simple_spinner_item);
+                R.array.c_level, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner

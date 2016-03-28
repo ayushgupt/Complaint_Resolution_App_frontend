@@ -21,7 +21,7 @@ import static com.android.volley.VolleyLog.TAG;
 /**
  * Created by Admin on 26-Mar-16.
  */
-public class FragmentComplaints extends android.support.v4.app.Fragment{
+public class Fragment_Institute_resolved extends android.support.v4.app.Fragment{
 
     private static int SPLASH_TIME_OUT =500 ;
 
@@ -42,7 +42,7 @@ public class FragmentComplaints extends android.support.v4.app.Fragment{
         //Generate list View from ArrayList
         //displayListView();
 
-        Hostel_Insti_ArrayAdapter dataAdapter = new Hostel_Insti_ArrayAdapter(getContext(), head, owner,time ,upvote );
+        Hostel_ArrayAdapter dataAdapter = new Hostel_ArrayAdapter(getContext(), head, owner,time ,upvote );
         ListView listView = (ListView) getView().findViewById(R.id.complaints);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
@@ -53,7 +53,7 @@ public class FragmentComplaints extends android.support.v4.app.Fragment{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-               // Toast.makeText(getActivity().getApplicationContext(), "Assignment selected", LENGTH_SHORT).show();
+                // Toast.makeText(getActivity().getApplicationContext(), "Assignment selected", LENGTH_SHORT).show();
                 Button LoginButton = (Button) view.findViewById(R.id.details);
 
 //                MainActivity.selectedassignment = Integer.parseInt((String) textview.getText());
@@ -126,7 +126,7 @@ public class FragmentComplaints extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.complaint_details,null);
+        return inflater.inflate(R.layout.institute_resolved,null);
 
 
     }

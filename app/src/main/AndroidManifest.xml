@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.quantumcoder.iitd_complaints.GreetingScreen">
+        <activity android:name=".GreetingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,28 +21,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.quantumcoder.iitd_complaints.LoginActivity"
+            android:name=".LoginActivity"
             android:label="Moodleplus"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.example.quantumcoder.iitd_complaints.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.quantumcoder.iitd_complaints.Signup_Activity"
+            android:name=".Signup_Activity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.quantumcoder.iitd_complaints.CoursePage"
-            android:label="@string/title_activity_course_page"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.quantumcoder.iitd_complaints.Complaint_activity"
-            android:label="@string/title_activity_complaint_activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.quantumcoder.iitd_complaints.detail_comp_activity"
-            android:label="@string/title_activity_detail_comp_activity"
+            android:name=".DetailedComplaintActivity"
+            android:label="@string/title_activity_detailed_complaint"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

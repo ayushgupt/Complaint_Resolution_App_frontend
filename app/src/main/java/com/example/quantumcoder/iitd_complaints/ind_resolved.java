@@ -11,21 +11,21 @@ import android.widget.ListView;
 /**
  * Created by Admin on 26-Mar-16.
  */
-public class Fragmentowncomplaints extends android.support.v4.app.Fragment{
+public class ind_resolved extends android.support.v4.app.Fragment{
 
 
     String head[] = {"Lanban", "Dogs ki  bakwas", "Library Timings"};
 
     String time[]= {"4 days ago", "5 days ago ", "100 days ago"    };
 
-    String upvote[]= {"200 Upvotes","5500 Upvotes","900 Upvotes"};
-    
+
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.v("ListFragment", "onActivityCreated().");
         Log.v("ListsavedInstanceState", savedInstanceState == null ? "true" : "false");
 
-        Own_Array_Adapter dataAdapter = new Own_Array_Adapter(getContext(), head ,time ,upvote );
+        ind_resolved_ArrayAdapter dataAdapter = new ind_resolved_ArrayAdapter(getContext(), head ,time  );
         ListView listView = (ListView) getView().findViewById(R.id.complaints);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
@@ -67,6 +67,6 @@ public class Fragmentowncomplaints extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.complaint_details,null);
+        return inflater.inflate(R.layout.ind_unresolved,null);
     }
 }

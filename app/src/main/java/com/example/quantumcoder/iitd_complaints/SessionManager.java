@@ -48,10 +48,6 @@ public class SessionManager {
     public static final String KEY_COURSEDATA = "coursedata";
     public static final String KEY_GRADES = "grades";
 
-    public static HashMap<String,JSONObject> assignments ;
-    public static HashMap<Integer,JSONObject> assignment_data ; // not needed
-    public static HashMap<String,JSONObject> threads ;
-    public static HashMap<String,JSONObject> grades ;
     public static JSONObject notifications;
 
 
@@ -129,10 +125,6 @@ public class SessionManager {
         // Clearing all data from Shared Preferences
         editor.clear();
         editor.commit();
-        assignments = null;
-        assignment_data = null;
-        threads = null;
-        grades = null;
         notifications = null;
 
         /*
@@ -175,42 +167,5 @@ public class SessionManager {
             return null;
         }
     }
-
-    public static void setCourseData(JSONObject coursedata){
-        editor.putString(KEY_COURSEDATA,coursedata.toString());
-        editor.commit();
-    }
-
-    public static JSONObject getCourseData(){
-        String coursedata = pref.getString(KEY_COURSEDATA,null);
-        if(coursedata==null){ return null; }
-        try {
-            JSONObject coursedata_json = new JSONObject(coursedata);
-            return coursedata_json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static void setGrades(JSONObject grades){
-        editor.putString(KEY_GRADES,grades.toString());
-        editor.commit();
-    }
-
-    public static JSONObject getGrades(){
-        String grades = pref.getString(KEY_GRADES,null);
-        if(grades==null){ return null; }
-        try {
-            JSONObject grades_json = new JSONObject(grades);
-            return grades_json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    // Methods to update cookie variables
 
 }

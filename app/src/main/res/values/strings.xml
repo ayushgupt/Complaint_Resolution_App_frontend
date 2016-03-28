@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">iitd_complaints</string>
+    <string name="app_name">Complaints App</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_course_page">CoursePage</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="user_type">
+        <item>Student</item>
+        <item>Admin</item>
+    </string-array>
+    <string-array name="Hostels">
+        <item>Aravali</item>
+        <item>Karakoram</item>
+        <item>Nilgiri</item>
+        <item>Jwalamukhi</item>
+        <item>Kumaon</item>
+        <item>Vindyanchal</item>
+        <item>Shivalik</item>
+        <item>Zanskar</item>
+        <item>Satpura</item>
+        <item>Girnar</item>
+        <item>Udaigiri</item>
+        <item>Kailash</item>
+        <item>Himadri</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="c_level">
+        <item>Individual</item>
+        <item>Hostel</item>
+        <item>Institute</item>
+    </string-array>
+    <string name="title_activity_complaint_activity">Complaint_activity</string>
+    <string name="title_activity_dummy">dummy</string>
+    <string name="title_activity_detail_comp_activity">detail_comp_activity</string>
 </resources>

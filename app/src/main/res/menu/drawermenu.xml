@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Home"
+          android:id="@+id/nav_item_home"
+          android:icon="@drawable/home"/>
+
+    <item android:title="Notifications"
+          android:id="@+id/nav_item_notif"
+          android:icon="@drawable/googlealerts"/>
+
+    <item android:title="My Complaints"
+          android:id="@+id/nav_item_my_complaints"
+          android:icon="@drawable/courses"/>
+
+
+    <item android:title="Add Complaints"
+        android:id="@+id/nav_item_add_complaints"
+        android:icon="@drawable/course"/>
+
+    <group android:id="@+id/complaint_levels">
+
+        <item android:title="Individual Complaints"
+            android:icon="@drawable/user"
+            android:id="@+id/nav_item_individual_complaints"/>
+        <item android:title="Hostel Complaints"
+            android:icon="@drawable/user"
+            android:id="@+id/nav_item_hostel_complaints"/>
+        <item android:title="Institute Complaints"
+            android:icon="@drawable/export"
+            android:id="@+id/nav_item_institute_complaints"/>
+
+    </group>
+
+    <group android:id="@+id/group_settings_id">
+
+        <item android:title="Profile"
+              android:icon="@drawable/user"
+            android:id="@+id/nav_item_profile"/>
+        <item android:title="Logout"
+             android:icon="@drawable/export"
+            android:id="@+id/nav_item_logout"/>
+
+    </group>
+
+
+
+</menu>

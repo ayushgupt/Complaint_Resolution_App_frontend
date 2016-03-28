@@ -61,11 +61,7 @@ public class SessionManager {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
-        assignments = new HashMap<String,JSONObject>();
-        assignment_data = new HashMap<Integer,JSONObject>();
-        threads = new HashMap<String,JSONObject>();
-        grades = new HashMap<String,JSONObject>();
-        notifications = null;
+
 
         DefaultHttpClient httpclient = new DefaultHttpClient();
 

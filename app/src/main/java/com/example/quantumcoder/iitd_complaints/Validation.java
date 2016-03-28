@@ -5,7 +5,7 @@ import android.widget.EditText;
 public class Validation
 {
     // Regular Expresions
-    private static final String USERNAME_REGEX = "[0-9]{4}[A-Za-z]{2,3}[0-9]{5}";
+    private static final String USERNAME_REGEX = "[A-Za-z]{2,3}[0-9]{7}";
 
     // Error Messages
     private static final String USERNAME_ERROR = "Invalid username";

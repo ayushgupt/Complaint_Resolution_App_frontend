@@ -7,50 +7,66 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class FragmentNotifications extends Fragment {
 
+    private static final String TAG = "quantumcoder";
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.v("ListFragment", "onActivityCreated().");
+        Log.v("FragmentNotifications", "onActivityCreated().");
         Log.v("ListsavedInstanceState", savedInstanceState == null ? "true" : "false");
 
-        //final String coursecode = MainActivity.selectedcoursecode;
-        //String notifications_url = ("http://"+LoginActivity.ip + "/default/notifications.json").trim();
-        //Log.d(TAG, notifications_url);
+        String notifications_url = ("http://"+LoginActivity.ip + "/notifications/startindex/1/endindex/10").trim();
+        Log.d(TAG, notifications_url);
 
-        //this is entered when the user has just logged in...
-       // RequestQueue notifsRequestQueue = Volley.newRequestQueue(getContext(), SessionManager.httpStack);
+
+         RequestQueue notifsRequestQueue = Volley.newRequestQueue(getContext(), SessionManager.httpStack);
         //requestqueue is made using http-stack as we need to check the sessions of the logged in user
-       // JsonObjectRequest notifsRequest = new JsonObjectRequest
-//                (Request.Method.GET, notifications_url, null, new Response.Listener<JSONObject>() {
-//
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        Log.d(TAG, response.toString());
-//                        SessionManager.notifications = response;
-//                        displayListView();
-//
-//                    }
-//                }, new Response.ErrorListener() {
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error)
-//                    {
-//                        VolleyLog.d(TAG, "Error: " + error.getMessage());
-//                        //pDialog.setMessage(error.getMessage());
-//                        Toast.makeText(getContext(), "Failed to fetch notifications data", LENGTH_LONG).show();
-//                        //pDialog.setMessage(error.getCause().toString());
-//                        //pDialog.hide();
-//                    }
-//                });
-//        notifsRequestQueue.add(notifsRequest);
+         JsonObjectRequest notifsRequest = new JsonObjectRequest
+                (Request.Method.GET, notifications_url, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                        SessionManager.notifications = response;
+                        displayListView();
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        VolleyLog.d(TAG, "Error: " + error.getMessage());
+                        //pDialog.setMessage(error.getMessage());
+                        Toast.makeText(getContext(), "Failed to fetch notifications data", Toast.LENGTH_LONG).show();
+                        //pDialog.setMessage(error.getCause().toString());
+                        //pDialog.hide();
+                    }
+                });
+        notifsRequestQueue.add(notifsRequest);
 
 
 
         //Generate list View from ArrayList
         //displayListView();
 
+
+    }
+
+    private void displayListView() {
 
     }
 

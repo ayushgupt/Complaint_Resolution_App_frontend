@@ -34,8 +34,7 @@ import static com.android.volley.VolleyLog.TAG;
  * A login screen that offers login via username/password.
  */
 public class LoginActivity extends AppCompatActivity {
-    static final String ip = "tapi.cse.iitd.ernet.in:1805";
-    //http://tapi.cse.iitd.ernet.in:1805/
+    static final String ip = "10.192.32.130/iitd_complaints_server/index.php";
 
     // UI references.
     private EditText mUsernameView;
@@ -64,9 +63,11 @@ public class LoginActivity extends AppCompatActivity {
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start Main Activity
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
+                // Perform validation here again to prevent submission of invalid fields
+                if (checkValidation()) {
+                    //Toast.makeText(LoginActivity.this, "Attempting to login", LENGTH_LONG).show();
+                    attemptLogin();
+                }
 
             }
         });
@@ -82,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if(!isNetworkConnected()){ makeText(LoginActivity.this, "Please connect to network", LENGTH_LONG).show(); }
+        //if(!isNetworkConnected()){ makeText(LoginActivity.this, "Please connect to network", LENGTH_LONG).show(); }
 
 
         Spinner spinner = (Spinner) findViewById(com.example.quantumcoder.iitd_complaints.R.id.planets_spinner);
@@ -101,32 +102,14 @@ public class LoginActivity extends AppCompatActivity {
 
         if(!isNetworkConnected()){ makeText(LoginActivity.this, "Please connect to network", LENGTH_LONG).show(); }
 
-
-        // Display message while submission
-        // Toast.makeText(this, "Submitting form...", Toast.LENGTH_LONG).show();
-
         final String username = mUsernameView.getText().toString().trim();
         final String password = mPasswordView.getText().toString().trim();
-        String url = String.format("http://"+LoginActivity.ip+"/default/login.json?userid=%s&password=%s",username,password);
-
+        String url = String.format("http://"+LoginActivity.ip+"/General/login/username/%s/password/%s",username,password);
+        Log.d(TAG, url);
 
         final ProgressDialog pDialog = new ProgressDialog(this);
         pDialog.setMessage("Loading...");
         pDialog.show();
-
-
-        /*
-        Map<String, String> params = new HashMap<String, String>();                        //Map for input data
-        params.put("userid", mUsernameView.getText().toString().trim());
-        params.put("password", mPasswordView.getText().toString().trim());
-        pDialog.setMessage("Loading");
-        */
-
-        /*
-        CookieManager manager = new CookieManager();
-        CookieHandler.setDefault(manager);
-        */
-
 
         RequestQueue requestQueue = Volley.newRequestQueue( getApplicationContext(), SessionManager.httpStack  );
 
@@ -180,9 +163,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //function for validating form data
     private boolean checkValidation() {
-        // if(!isNetworkConnected()){ Toast.makeText(MainActivity.this,"Please connect to a network",LENGTH_LONG);   }
-
-        //if(!Validation.isUsername(mUsernameView)){ makeText(LoginActivity.this, "Invalid username", LENGTH_LONG).show(); return false; }
+        if(!Validation.isUsername(mUsernameView)){ makeText(LoginActivity.this, "Invalid username", LENGTH_LONG).show(); return false; }
 
         return true;
     }

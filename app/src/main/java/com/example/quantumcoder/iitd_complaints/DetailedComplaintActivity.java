@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,13 @@ import static com.android.volley.VolleyLog.TAG;
 
 public class DetailedComplaintActivity extends AppCompatActivity {
 
+    String c[]={"Ayush Gupta: This is so much needed. In this Internet age,",
+            "Manish Singh: This is so much needed. In this Internet age, ",
+            "Aniket Bajpai: This is so much needed. In this Internet age, "};
+    String t[]={"5 hours ago","1 day ago","3 days ago"};
+
+
+
     JSONObject complaint_specific_data;
 
     @Override
@@ -34,6 +42,13 @@ public class DetailedComplaintActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_complaint);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        CommentArrayAdapter dataAdapter = new CommentArrayAdapter(this,c ,t);
+        ListView listView = (ListView) findViewById(R.id.comments);
+        // Assign adapter to ListView
+        listView.setAdapter(dataAdapter);
+        //enables filtering for the contents of the given ListView
+        listView.setTextFilterEnabled(true);
 
         int complaint_id = 1;//MainActivity.selected_complaint;
         String indi_complaint_url = ("http://"+LoginActivity.ip + "/User/indicomplaint/id/"+complaint_id ).trim();
@@ -62,7 +77,7 @@ public class DetailedComplaintActivity extends AppCompatActivity {
                         String description = "";
                         TextView descriptionview = (TextView) findViewById(R.id.complaint_description);
                         try {
-                            description = complaint_specific_data.getJSONObject("complaint").getString("decription");
+                            description = complaint_specific_data.getJSONObject("complaint").getString("description");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

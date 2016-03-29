@@ -45,7 +45,7 @@ public class Fragment_my_resolved extends android.support.v4.app.Fragment{
         }
 
 
-        String my_resolved_url = ("http://"+LoginActivity.ip + "/User/usercomplaints/username/"+username+"/resolved/1/startindex/1/endindex/10").trim();
+        String my_resolved_url = ("http://"+LoginActivity.ip + "/User/usercomplaints/username/"+username+"/resolved/1/startindex/0/endindex/10").trim();
         Log.d(TAG, my_resolved_url);
 
 

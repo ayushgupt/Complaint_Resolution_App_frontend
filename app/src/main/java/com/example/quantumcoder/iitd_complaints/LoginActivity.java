@@ -34,7 +34,7 @@ import static com.android.volley.VolleyLog.TAG;
  * A login screen that offers login via username/password.
  */
 public class LoginActivity extends AppCompatActivity {
-    static final String ip = "192.168.170.51/iitd_complaints_server/index.php";
+    static final String ip = "192.168.170.1/App/server/index.php";
 
     // UI references.
     private EditText mUsernameView;

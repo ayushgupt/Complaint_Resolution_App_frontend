@@ -116,11 +116,12 @@ public class Fragment_hostel_resolved extends android.support.v4.app.Fragment{
 
         //create an ArrayAdaptar from the String Array
         Hostel_ArrayAdapter dataAdapter = new Hostel_ArrayAdapter(getContext(), head, owner,time ,upvote );
-        ListView listView = (ListView) getView().findViewById(R.id.complaints);
+        ListView listView = (ListView) getView().findViewById(R.id.hostel_complaints);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
         //enables filtering for the contents of the given ListView
         listView.setTextFilterEnabled(true);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,

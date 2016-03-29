@@ -112,7 +112,9 @@
             android:layout_column="0"
             android:checked="false"
             android:layout_columnSpan="2" />
-        <Button android:layout_weight="1"
+        <Button
+            android:id="@+id/details"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Details"
             android:layout_width="0dip"/>

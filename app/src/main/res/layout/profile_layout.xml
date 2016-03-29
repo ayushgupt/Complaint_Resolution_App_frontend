@@ -33,7 +33,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="First Name"
-                    android:text="Manish"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -44,12 +43,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/last_name"
+                    android:id="@+id/hostel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="last name"
-                    android:text="Singh"
-
+                    android:hint="hostel"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -64,12 +61,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:text="singhmanish1997@gmail.com"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -79,39 +76,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="username"
-                    android:text="manish199648"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/EntryNumber"
+                    android:id="@+id/Phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="EntryNumber"
-                    android:text="2014ee10453"
+                    android:hint="Phone number"
+                    android:inputType="number"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/type"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Type"
-                    android:text="1"
+                    android:hint="password"
+                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
             <Button
                 android:id="@+id/applychange_button"
                 style="?android:textAppearanceSmall"

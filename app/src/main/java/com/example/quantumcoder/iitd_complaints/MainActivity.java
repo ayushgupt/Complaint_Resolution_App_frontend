@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     public FragmentManager mFragmentManager;
     public FragmentTransaction mFragmentTransaction;
 
+    public static int selected_complaint;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

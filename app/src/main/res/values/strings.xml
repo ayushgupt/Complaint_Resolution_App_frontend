@@ -23,6 +23,22 @@
         <item>Student</item>
         <item>Admin</item>
     </string-array>
+
+    <string-array name="c_type">
+        <item>Cleanliness</item>
+        <item>Electricity</item>
+        <item>Internet</item>
+        <item>Maintenance</item>
+        <item>Forest</item>
+        <item>Animal/Birds</item>
+        <item>Security</item>
+        <item>Shops</item>
+        <item>Sports</item>
+        <item>SAC</item>
+        <item>Eateries</item>
+
+    </string-array>
+    
     <string-array name="Hostels">
         <item>Aravali</item>
         <item>Karakoram</item>

@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,7 +43,6 @@ public class FragmentAddComplaints extends Fragment{
 
 
 
-
     }
 
 
@@ -65,6 +66,40 @@ public class FragmentAddComplaints extends Fragment{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        final TextView cname = (TextView) getView().findViewById(R.id.c_name);
+        final Spinner spinner1 = (Spinner) getView().findViewById(R.id.complaint_name);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
+                R.array.c_type, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner1.setAdapter(adapter1);
+
+
+
+
+        spinner.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(
+                            AdapterView<?> parent, View view, int position, long id) {
+                        if (position == 2) {
+                            spinner1.setVisibility(View.VISIBLE);
+                            cname.setVisibility(View.VISIBLE);
+                        } else {
+                            spinner1.setVisibility(View.GONE);
+                            cname.setVisibility(View.GONE);
+                        }
+
+                    }
+
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        spinner1.setVisibility(View.GONE);
+                        cname.setVisibility(View.GONE);
+
+                    }
+                });
 
         final Button addButton = (Button) view.findViewById(R.id.add_button);
         addButton.setOnClickListener(new Button.OnClickListener() {

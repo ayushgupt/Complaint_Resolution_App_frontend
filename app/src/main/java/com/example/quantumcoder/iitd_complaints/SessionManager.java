@@ -49,6 +49,16 @@ public class SessionManager {
     public static final String KEY_GRADES = "grades";
 
     public static JSONObject notifications;
+    public static JSONObject hostel_resolved_complaints;
+    public static JSONObject hostel_unresolved_complaints;
+    public static JSONObject insti_resolved_complaints;
+    public static JSONObject insti_unresolved_complaints;
+    public static JSONObject my_resolved_complaints;
+    public static JSONObject my_unresolved_complaints;
+    public static JSONObject indi_resolved_complaints;
+    public static JSONObject indi_unresolved_complaints;
+
+
 
 
 
@@ -126,6 +136,14 @@ public class SessionManager {
         editor.clear();
         editor.commit();
         notifications = null;
+        hostel_resolved_complaints = null;
+        hostel_unresolved_complaints = null;
+        insti_resolved_complaints = null;
+        insti_unresolved_complaints = null;
+        my_resolved_complaints = null;
+        my_unresolved_complaints = null;
+        indi_resolved_complaints = null;
+        indi_unresolved_complaints = null;
 
         /*
         // After logout redirect user to Loing Activity

@@ -1,86 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    >
 
     <GridLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout"
+        android:background="#f5f5f0"
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="LAN BAN ISSUE"
+            android:textSize="30sp"
+            android:textColor="#0066cc"
             android:id="@+id/head"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_columnSpan="4"
-            android:gravity="center_horizontal" />
+            android:layout_marginLeft="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Started By"
-            android:id="@+id/textView3"
-            android:layout_row="1"
-            android:layout_column="0" />
+    </GridLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="999 Upvotes"
-            android:id="@+id/upvote"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:layout_columnSpan="2"
-            android:layout_gravity="center_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Aniket Bajpai"
-            android:id="@+id/owner"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_columnSpan="2"
-            android:layout_gravity="center_horizontal"
-            android:gravity="fill_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="3 days ago"
-            android:id="@+id/time"
-            android:layout_row="1"
-            android:layout_column="3" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:stretchColumns="*"
+        android:id="@+id/tableLayout"
+        android:background="#f5f5f0"
+        >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_weight="1"
+            android:gravity="center" >
 
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:text="Created By" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:id="@+id/owner"
+                android:text="Ayush Gupta" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:id="@+id/upvote"
+                android:text="999 Upvotes" />
+            <TextView
+                android:id="@+id/time"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:text="3days ago" />
+
+        </TableRow>
+    </TableLayout>
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout2"
+        android:background="#f5f5f0"
+        >
+
+    </GridLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <ToggleButton
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:text="UpVote"
             android:textOff="Upvote"
             android:textOn="Upvote"
-            android:id="@+id/toggleButton"
+            android:id="@+id/toggleButton1"
             android:layout_row="3"
             android:layout_column="0"
             android:checked="false"
             android:layout_columnSpan="2" />
-
-        <Button
-            android:layout_width="wrap_content"
+        <Button android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Details"
-            android:id="@+id/details"
-            android:layout_row="3"
-            android:layout_column="3"
-            android:layout_gravity="center_horizontal" />
+            android:layout_width="0dip"/>
+    </LinearLayout>
 
-    </GridLayout>
+
 </RelativeLayout>

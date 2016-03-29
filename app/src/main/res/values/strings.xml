@@ -49,4 +49,12 @@
     <string name="title_activity_dummy">dummy</string>
     <string name="title_activity_detail_comp_activity">detail_comp_activity</string>
     <string name="title_activity_detailed_complaint">DetailedComplaintActivity</string>
+
+    <string name="title_activity_admin_">Admin_Activity</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_admin__profile">Admin_Profile</string>
+    <string name="title_activity_log_out">LogOut</string>
+    <string name="title_activity_detailed_complaint_activity">detailed_complaint_activity</string>
+    <string name="title_activity_final__one__complaint">final_One_Complaint</string>
 </resources>

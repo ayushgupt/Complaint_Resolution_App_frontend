@@ -25,6 +25,18 @@
             android:label="Moodleplus"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".LogOut"
+            android:label="@string/title_activity_log_out"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Admin_Profile"
+            android:label="@string/title_activity_admin__profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
